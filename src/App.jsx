@@ -1,9 +1,17 @@
 import React from 'react';
 import { LanguageProvider, useLanguage } from './LanguageContext';
 import iPhone from '../src/Images/iPhone.png';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AppContent = () => {
   const { language, setLanguage, content } = useLanguage();
+
+  const notify = () => toast("Til o'zgardi");
+  const handleLanguageChange = (e) => {
+    setLanguage(e.target.value);
+    notify();
+  };
 
   return (
     <div className="font-sans">
@@ -17,15 +25,15 @@ const AppContent = () => {
         </div>
 
         <select 
-        value={language} 
-        onChange={(e) => setLanguage(e.target.value)} 
-        className="ml-8 p-2 border border-gray-300 rounded-md"
-      >
-        <option value="eng">Eng</option>
-        <option value="rus">Rus</option>
-        <option value="uzb">Uzb</option>
-      </select>
-
+          value={language} 
+          onChange={handleLanguageChange}
+          className="ml-8 p-2 border border-gray-300 rounded-md"
+        >
+          <option value="eng">Eng</option>
+          <option value="rus">Rus</option>
+          <option value="uzb">Uzb</option>
+        </select>
+        <ToastContainer />
         <div className="flex items-center space-x-4">
           <button className="text-gray-700">{content[language].login}</button>
           <button className="bg-blue-600 text-white px-4 py-2 rounded-md">{content[language].signup}</button>
