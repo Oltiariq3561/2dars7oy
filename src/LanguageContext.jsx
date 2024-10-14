@@ -6,7 +6,7 @@ export const LanguageProvider = ({ children }) => {
     uzb: {
       logo: 'SIZNING LOGO',
       assets: 'Aktivlar',
-      creators: 'Yaratuvchilar',
+      creators: 'Yasovchilar',
       careers: 'Karyera',
       goPro: "Professional bo'lish",
       login: 'Kirish',

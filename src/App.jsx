@@ -17,7 +17,7 @@ const AppContent = () => {
     <div className="font-sans">
       <header className="flex justify-between items-center py-4 px-8 bg-gray-100">
         <div className="text-xl font-bold">{content[language].logo}</div>
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden ml-40 md:flex space-x-6">
           <a href="#" className="text-gray-700">{content[language].assets}</a>
           <a href="#" className="text-gray-700">{content[language].creators}</a>
           <a href="#" className="text-gray-700">{content[language].careers}</a>
